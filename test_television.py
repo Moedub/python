@@ -1,5 +1,4 @@
 import pytest
-
 from television import Television
 
 def test_init():
@@ -18,10 +17,11 @@ def test_power():
 
 def test_mute():
     tv = Television()
+    tv.power()  # Turn the TV on before muting
     tv.mute()
-    assert tv._Television__muted is True
+    assert tv._Television__muted is True  # Verify the TV is muted
     tv.mute()
-    assert tv._Television__muted is False
+    assert tv._Television__muted is False  # Verify the TV is unmuted
 
 def test_channel_up():
     tv = Television()
