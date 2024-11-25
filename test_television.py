@@ -28,7 +28,7 @@ class TestTelevision:
         Test the mute functionality.
         """
         tv: Television = Television()
-        tv.power()  # Ensure the TV is on before muting
+        tv.power()
         tv.mute()
         assert tv._Television__muted is True
         tv.mute()
@@ -39,7 +39,7 @@ class TestTelevision:
         Test the channel increment functionality.
         """
         tv: Television = Television()
-        tv.power()  # Ensure the TV is on before changing channels
+        tv.power()
         for _ in range(Television.MAX_CHANNEL + 1):
             tv.channel_up()
         assert tv._Television__channel == Television.MIN_CHANNEL
@@ -49,7 +49,7 @@ class TestTelevision:
         Test the channel decrement functionality.
         """
         tv: Television = Television()
-        tv.power()  # Ensure the TV is on before changing channels
+        tv.power()
         tv.channel_down()
         assert tv._Television__channel == Television.MAX_CHANNEL
 
@@ -58,7 +58,7 @@ class TestTelevision:
         Test the volume increment functionality.
         """
         tv: Television = Television()
-        tv.power()  # Ensure the TV is on before changing volume
+        tv.power()
         for _ in range(Television.MAX_VOLUME + 1):
             tv.volume_up()
         assert tv._Television__volume == Television.MAX_VOLUME
@@ -68,7 +68,7 @@ class TestTelevision:
         Test the volume decrement functionality.
         """
         tv: Television = Television()
-        tv.power()  # Ensure the TV is on before changing volume
+        tv.power()
         tv.volume_down()
         assert tv._Television__volume == Television.MIN_VOLUME
 
